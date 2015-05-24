@@ -1,0 +1,21 @@
+PODS:
+  - Expecta (1.0.0)
+  - OCMock (3.1.2)
+  - Specta (1.0.0)
+  - Typhoon (3.1.8):
+    - Typhoon/no-arc (= 3.1.8)
+  - Typhoon/no-arc (3.1.8)
+
+DEPENDENCIES:
+  - Expecta (~> 1.0)
+  - OCMock (~> 3.1.2)
+  - Specta (~> 1.0)
+  - Typhoon (~> 3.1.8)
+
+SPEC CHECKSUMS:
+  Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
+  OCMock: a10ea9f0a6e921651f96f78b6faee95ebc813b92
+  Specta: 96fe05fe5c7348b5223f85e862904f6e832abb14
+  Typhoon: b9b94a384d772458b955164fa826706706058dec
+
+COCOAPODS: 0.35.0
