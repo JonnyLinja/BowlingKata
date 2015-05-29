@@ -10,6 +10,7 @@
 		9218FD7177DF3662FB5D057A /* libPods-BowlingKata.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F3D4AD9A0F48FC094AB372 /* libPods-BowlingKata.a */; };
 		C30DE1D51B184DBF003DBFFA /* RollHistoryMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = C30DE1D41B184DBF003DBFFA /* RollHistoryMutableArray.m */; };
 		C30DE1DC1B185196003DBFFA /* RollHistoryIntArray.m in Sources */ = {isa = PBXBuildFile; fileRef = C30DE1DB1B185196003DBFFA /* RollHistoryIntArray.m */; };
+		C30DE2121B18527A003DBFFA /* YesValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = C30DE2111B18527A003DBFFA /* YesValidator.m */; };
 		C31F42DC1B162FD400060270 /* BowlingGameSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C31F42DB1B162FD400060270 /* BowlingGameSpec.m */; };
 		C31F42DF1B1633CE00060270 /* BowlingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = C31F42DE1B1633CE00060270 /* BowlingGame.m */; };
 		C32AA3AF1B11560300EEE296 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C32AA3AE1B11560300EEE296 /* main.m */; };
@@ -43,6 +44,8 @@
 		C30DE1D41B184DBF003DBFFA /* RollHistoryMutableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollHistoryMutableArray.m; sourceTree = "<group>"; };
 		C30DE1DA1B185196003DBFFA /* RollHistoryIntArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollHistoryIntArray.h; sourceTree = "<group>"; };
 		C30DE1DB1B185196003DBFFA /* RollHistoryIntArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollHistoryIntArray.m; sourceTree = "<group>"; };
+		C30DE2101B18527A003DBFFA /* YesValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YesValidator.h; sourceTree = "<group>"; };
+		C30DE2111B18527A003DBFFA /* YesValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YesValidator.m; sourceTree = "<group>"; };
 		C31F42DB1B162FD400060270 /* BowlingGameSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BowlingGameSpec.m; sourceTree = "<group>"; };
 		C31F42DD1B1633CE00060270 /* BowlingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BowlingGame.h; sourceTree = "<group>"; };
 		C31F42DE1B1633CE00060270 /* BowlingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BowlingGame.m; sourceTree = "<group>"; };
@@ -129,6 +132,16 @@
 			name = Calculator;
 			sourceTree = "<group>";
 		};
+		C30DE20F1B185265003DBFFA /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				C31F42E01B164D7D00060270 /* RollValidator.h */,
+				C30DE2101B18527A003DBFFA /* YesValidator.h */,
+				C30DE2111B18527A003DBFFA /* YesValidator.m */,
+			);
+			name = Validator;
+			sourceTree = "<group>";
+		};
 		C32AA3A01B11560300EEE296 = {
 			isa = PBXGroup;
 			children = (
@@ -154,7 +167,7 @@
 			children = (
 				C31F42DD1B1633CE00060270 /* BowlingGame.h */,
 				C31F42DE1B1633CE00060270 /* BowlingGame.m */,
-				C31F42E01B164D7D00060270 /* RollValidator.h */,
+				C30DE20F1B185265003DBFFA /* Validator */,
 				C30DE1D81B18516A003DBFFA /* History */,
 				C30DE1D91B185179003DBFFA /* Calculator */,
 				C32AA3B01B11560300EEE296 /* AppDelegate.h */,
@@ -363,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C30DE2121B18527A003DBFFA /* YesValidator.m in Sources */,
 				C31F42DF1B1633CE00060270 /* BowlingGame.m in Sources */,
 				C32AA3B51B11560300EEE296 /* ViewController.m in Sources */,
 				C36BDD7B1B1831250089D820 /* SimpleScoreCalculator.m in Sources */,
