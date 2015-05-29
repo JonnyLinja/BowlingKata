@@ -27,7 +27,7 @@ describe(@"when calculating the score for frame with a strike", ^{
         calculator.history = historyMock;
         
         //because
-        NSInteger score = [calculator scoreForFrame:0];
+        NSInteger score = [calculator scoreForNextFrame];
         
         //verify
         expect(score).to.equal(18);
