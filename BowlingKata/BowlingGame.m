@@ -11,6 +11,7 @@
         _validator = validator;
         _history = history;
         _calculator = calculator;
+        _calculator.history = _history;
     }
     return self;
 }
@@ -23,7 +24,7 @@
 
 - (NSInteger) score {
     if([_validator isGameComplete:_history]) {
-        return [_calculator calculateScoreOf:_history];
+        return [_calculator totalScore];
     }
     return -1;
 }

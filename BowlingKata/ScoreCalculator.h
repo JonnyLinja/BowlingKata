@@ -1,5 +1,6 @@
 #import "RollHistory.h"
 
 @protocol ScoreCalculator <NSObject>
-- (NSInteger) calculateScoreOf:(id <RollHistory>)history;
+@property (nonatomic, strong) id<RollHistory> history;
+- (NSInteger) totalScore;
 @end

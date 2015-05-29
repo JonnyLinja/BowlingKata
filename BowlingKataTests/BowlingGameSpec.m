@@ -79,7 +79,7 @@ describe(@"BowlingGame", ^{
             
             //expectations
             OCMVerify([rollValidatorMock isGameComplete:rollHistoryMock]);
-            OCMVerify([scoreCalculatorMock calculateScoreOf:rollHistoryMock]);
+            OCMVerify([scoreCalculatorMock totalScore]);
         });
     });
     
