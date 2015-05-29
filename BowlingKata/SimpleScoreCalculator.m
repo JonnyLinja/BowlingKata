@@ -18,7 +18,7 @@
         return 10+[self.history pinsForRoll:2];
     }
     
-    return -1;
+    return [self.history pinsForRoll:0]+[self.history pinsForRoll:1];
 }
 
 - (BOOL) isStrike {

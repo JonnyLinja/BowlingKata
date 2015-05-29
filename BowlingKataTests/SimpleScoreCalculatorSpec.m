@@ -57,7 +57,15 @@ describe(@"SimpleScoreCalculator", ^{
     
     describe(@"when calculating the score for frame with neither a strike or spare", ^{
         it(@"should return the sum of the two rolls of that frame", ^{
+            //mocks
+            OCMStub([historyMock pinsForRoll:0]).andReturn(3);
+            OCMStub([historyMock pinsForRoll:1]).andReturn(6);
             
+            //because
+            NSInteger score = [sut scoreForNextFrame];
+            
+            //verify
+            expect(score).to.equal(9);
         });
     });
 });
