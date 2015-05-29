@@ -42,7 +42,16 @@ describe(@"SimpleScoreCalculator", ^{
     
     describe(@"when calculating the score for frame with a spare", ^{
         it(@"should return 10 plus the score of the next roll", ^{
+            //mocks
+            OCMStub([historyMock pinsForRoll:0]).andReturn(4);
+            OCMStub([historyMock pinsForRoll:1]).andReturn(6);
+            OCMStub([historyMock pinsForRoll:2]).andReturn(2);
             
+            //because
+            NSInteger score = [sut scoreForNextFrame];
+            
+            //verify
+            expect(score).to.equal(12);
         });
     });
     
