@@ -28,14 +28,15 @@ describe(@"BowlingGame", ^{
             //context
             NSInteger roll = 9001;
             NSError *err = nil;
-            OCMStub([rollValidatorMock isValidRoll:roll error:&err]).andReturn(false);
+            NSError *stubError = [NSError errorWithDomain:@"foobar" code:9001 userInfo:nil];
+            OCMStub([rollValidatorMock isValidRoll:roll error:[OCMArg setTo:stubError]]).andReturn(false);
             
             //because
             [game roll:roll error:&err];
             
             //expectations
-            OCMVerify([rollValidatorMock isValidRoll:roll error:&err]);
-            expect(err).notTo.beNil;
+            OCMVerify([rollValidatorMock isValidRoll:roll error:[OCMArg anyObjectRef]]);
+            expect(err).notTo.beNil();
         });
     });
     
