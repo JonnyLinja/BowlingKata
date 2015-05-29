@@ -20,7 +20,26 @@ describe(@"SimpleScoreCalculator", ^{
     
     describe(@"when calculating score", ^{
         it(@"should return the sum of the scores for each of the 10 frames", ^{
+            //mocks
+            OCMStub([historyMock pinsForRoll:0]).andReturn(10);     //1
+            OCMStub([historyMock pinsForRoll:1]).andReturn(6);      //2
+            OCMStub([historyMock pinsForRoll:2]).andReturn(2);
+            OCMStub([historyMock pinsForRoll:3]).andReturn(4);      //3
+            OCMStub([historyMock pinsForRoll:4]).andReturn(6);
+            OCMStub([historyMock pinsForRoll:5]).andReturn(10);     //4
+            OCMStub([historyMock pinsForRoll:6]).andReturn(10);     //5
+            OCMStub([historyMock pinsForRoll:7]).andReturn(10);     //6
+            OCMStub([historyMock pinsForRoll:8]).andReturn(10);     //7
+            OCMStub([historyMock pinsForRoll:9]).andReturn(10);     //8
+            OCMStub([historyMock pinsForRoll:10]).andReturn(10);    //9
+            OCMStub([historyMock pinsForRoll:11]).andReturn(3);     //10
+            OCMStub([historyMock pinsForRoll:12]).andReturn(6);
             
+            //because
+            NSInteger score = [sut totalScore];
+            
+            //verify
+            expect(score).to.equal(217);
         });
     });
     

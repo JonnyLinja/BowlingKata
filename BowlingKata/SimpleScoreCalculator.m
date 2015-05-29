@@ -6,19 +6,27 @@
 @synthesize history;
 
 - (NSInteger) totalScore {
-    return -1;
+    NSInteger score = 0;
+    for(int i=0; i<10; i++) {
+        score += [self scoreForNextFrame];
+    }
+    return score;
 }
 
 - (NSInteger) scoreForNextFrame {
     if([self isStrike]) {
-        return 10+[self.history pinsForRoll:1]+[self.history pinsForRoll:2];
+        _historyPosition++;
+        return 10 + [self.history pinsForRoll:_historyPosition] + [self.history pinsForRoll:_historyPosition+1];
     }
     
     if([self isSpare]) {
-        return 10+[self.history pinsForRoll:2];
+        _historyPosition += 2;
+        return 10 + [self.history pinsForRoll:_historyPosition];
     }
     
-    return [self.history pinsForRoll:0]+[self.history pinsForRoll:1];
+    NSInteger score = [self.history pinsForRoll:_historyPosition] + [self.history pinsForRoll:_historyPosition+1];
+    _historyPosition += 2;
+    return score;
 }
 
 - (BOOL) isStrike {
