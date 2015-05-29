@@ -16,6 +16,8 @@
 		C32AA3B81B11560300EEE296 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C32AA3B61B11560300EEE296 /* Main.storyboard */; };
 		C32AA3BA1B11560300EEE296 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C32AA3B91B11560300EEE296 /* Images.xcassets */; };
 		C32AA3BD1B11560300EEE296 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C32AA3BB1B11560300EEE296 /* LaunchScreen.xib */; };
+		C36BDD751B1828420089D820 /* SimpleScoreCalculatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C36BDD741B1828420089D820 /* SimpleScoreCalculatorSpec.m */; };
+		C36BDD7B1B1831250089D820 /* SimpleScoreCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = C36BDD7A1B1831250089D820 /* SimpleScoreCalculator.m */; };
 		F4D81F94E9D109EA0F1887ED /* libPods-BowlingKataTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B00394C9B6C4B93CC83C53 /* libPods-BowlingKataTests.a */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,9 @@
 		C32AA3C71B11560300EEE296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C334F36A1B178EA400F7E6BC /* RollHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollHistory.h; sourceTree = "<group>"; };
 		C33A363F1B17F2B8006A5206 /* ScoreCalculator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreCalculator.h; sourceTree = "<group>"; };
+		C36BDD741B1828420089D820 /* SimpleScoreCalculatorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleScoreCalculatorSpec.m; sourceTree = "<group>"; };
+		C36BDD791B1831250089D820 /* SimpleScoreCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleScoreCalculator.h; sourceTree = "<group>"; };
+		C36BDD7A1B1831250089D820 /* SimpleScoreCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleScoreCalculator.m; sourceTree = "<group>"; };
 		C6F3D4AD9A0F48FC094AB372 /* libPods-BowlingKata.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BowlingKata.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -124,6 +129,8 @@
 				C31F42E01B164D7D00060270 /* RollValidator.h */,
 				C334F36A1B178EA400F7E6BC /* RollHistory.h */,
 				C33A363F1B17F2B8006A5206 /* ScoreCalculator.h */,
+				C36BDD791B1831250089D820 /* SimpleScoreCalculator.h */,
+				C36BDD7A1B1831250089D820 /* SimpleScoreCalculator.m */,
 				C32AA3B01B11560300EEE296 /* AppDelegate.h */,
 				C32AA3B11B11560300EEE296 /* AppDelegate.m */,
 				C32AA3B31B11560300EEE296 /* ViewController.h */,
@@ -149,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				C31F42DB1B162FD400060270 /* BowlingGameSpec.m */,
+				C36BDD741B1828420089D820 /* SimpleScoreCalculatorSpec.m */,
 				C32AA3C61B11560300EEE296 /* Supporting Files */,
 			);
 			path = BowlingKataTests;
@@ -331,6 +339,7 @@
 			files = (
 				C31F42DF1B1633CE00060270 /* BowlingGame.m in Sources */,
 				C32AA3B51B11560300EEE296 /* ViewController.m in Sources */,
+				C36BDD7B1B1831250089D820 /* SimpleScoreCalculator.m in Sources */,
 				C32AA3B21B11560300EEE296 /* AppDelegate.m in Sources */,
 				C32AA3AF1B11560300EEE296 /* main.m in Sources */,
 			);
@@ -341,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C31F42DC1B162FD400060270 /* BowlingGameSpec.m in Sources */,
+				C36BDD751B1828420089D820 /* SimpleScoreCalculatorSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
