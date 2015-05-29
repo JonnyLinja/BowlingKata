@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9218FD7177DF3662FB5D057A /* libPods-BowlingKata.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F3D4AD9A0F48FC094AB372 /* libPods-BowlingKata.a */; };
+		C30DE1D51B184DBF003DBFFA /* RollHistoryMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = C30DE1D41B184DBF003DBFFA /* RollHistoryMutableArray.m */; };
+		C30DE1DC1B185196003DBFFA /* RollHistoryIntArray.m in Sources */ = {isa = PBXBuildFile; fileRef = C30DE1DB1B185196003DBFFA /* RollHistoryIntArray.m */; };
 		C31F42DC1B162FD400060270 /* BowlingGameSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C31F42DB1B162FD400060270 /* BowlingGameSpec.m */; };
 		C31F42DF1B1633CE00060270 /* BowlingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = C31F42DE1B1633CE00060270 /* BowlingGame.m */; };
 		C32AA3AF1B11560300EEE296 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C32AA3AE1B11560300EEE296 /* main.m */; };
@@ -37,6 +39,10 @@
 		400445EADDCE4D0BAEAE83BD /* Pods-BowlingKata.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BowlingKata.release.xcconfig"; path = "Pods/Target Support Files/Pods-BowlingKata/Pods-BowlingKata.release.xcconfig"; sourceTree = "<group>"; };
 		5A96FADA7213C53879F94036 /* Pods-BowlingKataTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BowlingKataTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BowlingKataTests/Pods-BowlingKataTests.debug.xcconfig"; sourceTree = "<group>"; };
 		62B00394C9B6C4B93CC83C53 /* libPods-BowlingKataTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BowlingKataTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C30DE1D31B184DBF003DBFFA /* RollHistoryMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollHistoryMutableArray.h; sourceTree = "<group>"; };
+		C30DE1D41B184DBF003DBFFA /* RollHistoryMutableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollHistoryMutableArray.m; sourceTree = "<group>"; };
+		C30DE1DA1B185196003DBFFA /* RollHistoryIntArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollHistoryIntArray.h; sourceTree = "<group>"; };
+		C30DE1DB1B185196003DBFFA /* RollHistoryIntArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollHistoryIntArray.m; sourceTree = "<group>"; };
 		C31F42DB1B162FD400060270 /* BowlingGameSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BowlingGameSpec.m; sourceTree = "<group>"; };
 		C31F42DD1B1633CE00060270 /* BowlingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BowlingGame.h; sourceTree = "<group>"; };
 		C31F42DE1B1633CE00060270 /* BowlingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BowlingGame.m; sourceTree = "<group>"; };
@@ -101,6 +107,28 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C30DE1D81B18516A003DBFFA /* History */ = {
+			isa = PBXGroup;
+			children = (
+				C334F36A1B178EA400F7E6BC /* RollHistory.h */,
+				C30DE1D31B184DBF003DBFFA /* RollHistoryMutableArray.h */,
+				C30DE1D41B184DBF003DBFFA /* RollHistoryMutableArray.m */,
+				C30DE1DA1B185196003DBFFA /* RollHistoryIntArray.h */,
+				C30DE1DB1B185196003DBFFA /* RollHistoryIntArray.m */,
+			);
+			name = History;
+			sourceTree = "<group>";
+		};
+		C30DE1D91B185179003DBFFA /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				C33A363F1B17F2B8006A5206 /* ScoreCalculator.h */,
+				C36BDD791B1831250089D820 /* SimpleScoreCalculator.h */,
+				C36BDD7A1B1831250089D820 /* SimpleScoreCalculator.m */,
+			);
+			name = Calculator;
+			sourceTree = "<group>";
+		};
 		C32AA3A01B11560300EEE296 = {
 			isa = PBXGroup;
 			children = (
@@ -127,10 +155,8 @@
 				C31F42DD1B1633CE00060270 /* BowlingGame.h */,
 				C31F42DE1B1633CE00060270 /* BowlingGame.m */,
 				C31F42E01B164D7D00060270 /* RollValidator.h */,
-				C334F36A1B178EA400F7E6BC /* RollHistory.h */,
-				C33A363F1B17F2B8006A5206 /* ScoreCalculator.h */,
-				C36BDD791B1831250089D820 /* SimpleScoreCalculator.h */,
-				C36BDD7A1B1831250089D820 /* SimpleScoreCalculator.m */,
+				C30DE1D81B18516A003DBFFA /* History */,
+				C30DE1D91B185179003DBFFA /* Calculator */,
 				C32AA3B01B11560300EEE296 /* AppDelegate.h */,
 				C32AA3B11B11560300EEE296 /* AppDelegate.m */,
 				C32AA3B31B11560300EEE296 /* ViewController.h */,
@@ -340,6 +366,8 @@
 				C31F42DF1B1633CE00060270 /* BowlingGame.m in Sources */,
 				C32AA3B51B11560300EEE296 /* ViewController.m in Sources */,
 				C36BDD7B1B1831250089D820 /* SimpleScoreCalculator.m in Sources */,
+				C30DE1DC1B185196003DBFFA /* RollHistoryIntArray.m in Sources */,
+				C30DE1D51B184DBF003DBFFA /* RollHistoryMutableArray.m in Sources */,
 				C32AA3B21B11560300EEE296 /* AppDelegate.m in Sources */,
 				C32AA3AF1B11560300EEE296 /* main.m in Sources */,
 			);
