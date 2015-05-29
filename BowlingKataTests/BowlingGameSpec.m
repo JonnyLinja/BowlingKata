@@ -14,13 +14,13 @@ describe(@"BowlingGame", ^{
     __block id rollValidatorMock;
     __block id rollHistoryMock;
     __block id scoreCalculatorMock;
-    __block BowlingGame *game;
+    __block BowlingGame *sut;
     
     beforeEach(^{
         rollValidatorMock = OCMProtocolMock(@protocol(RollValidator));
         rollHistoryMock = OCMProtocolMock(@protocol(RollHistory));
         scoreCalculatorMock = OCMProtocolMock(@protocol(ScoreCalculator));
-        game = [[BowlingGame alloc] initWithValidator:rollValidatorMock history:rollHistoryMock andCalculator:scoreCalculatorMock];
+        sut = [[BowlingGame alloc] initWithValidator:rollValidatorMock history:rollHistoryMock andCalculator:scoreCalculatorMock];
     });
     
     describe(@"when the player rolls an invalid ball", ^{
@@ -32,7 +32,7 @@ describe(@"BowlingGame", ^{
             OCMStub([rollValidatorMock isValidRoll:roll error:[OCMArg setTo:stubError]]).andReturn(false);
             
             //because
-            [game roll:roll error:&err];
+            [sut roll:roll error:&err];
             
             //expectations
             OCMVerify([rollValidatorMock isValidRoll:roll error:[OCMArg anyObjectRef]]);
@@ -47,7 +47,7 @@ describe(@"BowlingGame", ^{
             OCMStub([rollValidatorMock isValidRoll:roll error:nil]).andReturn(true);
             
             //because
-            [game roll:roll error:nil];
+            [sut roll:roll error:nil];
             
             //expectations
             OCMVerify([rollValidatorMock isValidRoll:roll error:nil]);
@@ -61,7 +61,7 @@ describe(@"BowlingGame", ^{
             OCMStub([rollValidatorMock isGameComplete:rollHistoryMock]).andReturn(false);
             
             //because
-            NSInteger score = [game score];
+            NSInteger score = [sut score];
             
             //expectations
             OCMVerify([rollValidatorMock isGameComplete:rollHistoryMock]);
@@ -75,7 +75,7 @@ describe(@"BowlingGame", ^{
             OCMStub([rollValidatorMock isGameComplete:rollHistoryMock]).andReturn(true);
             
             //because
-            [game score];
+            [sut score];
             
             //expectations
             OCMVerify([rollValidatorMock isGameComplete:rollHistoryMock]);
