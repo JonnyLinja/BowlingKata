@@ -6,7 +6,7 @@
 @interface BowlingGame : NSObject
 
 - (id) initWithValidator:(id<RollValidator>)validator history:(id<RollHistory>)history andCalculator:(id<ScoreCalculator>)calculator;
-- (void) roll:(NSInteger)roll;
+- (void) roll:(NSInteger)roll error:(NSError * __autoreleasing *)error;
 - (NSInteger) score;
 
 @end

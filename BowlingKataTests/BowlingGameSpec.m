@@ -23,9 +23,19 @@ describe(@"BowlingGame", ^{
         game = [[BowlingGame alloc] initWithValidator:rollValidatorMock history:rollHistoryMock andCalculator:scoreCalculatorMock];
     });
     
-    pending(@"when the player rolls an invalid ball", ^{
-        it(@"should throw an error", ^{
+    describe(@"when the player rolls an invalid ball", ^{
+        it(@"should return an error", ^{
+            //context
+            NSInteger roll = 9001;
+            NSError *err = nil;
+            OCMStub([rollValidatorMock isValidRoll:roll error:&err]).andReturn(false);
             
+            //because
+            [game roll:roll error:&err];
+            
+            //expectations
+            OCMVerify([rollValidatorMock isValidRoll:roll error:&err]);
+            expect(err).notTo.beNil;
         });
     });
     
@@ -33,13 +43,13 @@ describe(@"BowlingGame", ^{
         it(@"should record the number of pins hit", ^{
             //context
             NSInteger roll = 0;
-            OCMStub([rollValidatorMock isValidRoll:roll]).andReturn(true);
+            OCMStub([rollValidatorMock isValidRoll:roll error:nil]).andReturn(true);
             
             //because
-            [game roll:0];
+            [game roll:roll error:nil];
             
             //expectations
-            OCMVerify([rollValidatorMock isValidRoll:roll]);
+            OCMVerify([rollValidatorMock isValidRoll:roll error:nil]);
             OCMVerify([rollHistoryMock recordRoll:roll]);
         });
     });

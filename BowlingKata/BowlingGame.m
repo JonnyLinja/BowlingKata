@@ -15,8 +15,8 @@
     return self;
 }
 
-- (void) roll:(NSInteger)roll {
-    if([_validator isValidRoll:roll]) {
+- (void) roll:(NSInteger)roll error:(NSError * __autoreleasing *)error {
+    if([_validator isValidRoll:roll error:error]) {
         [_history recordRoll:roll];
     }
 }
