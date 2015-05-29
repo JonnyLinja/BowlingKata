@@ -15,17 +15,19 @@
 
 - (NSInteger) scoreForNextFrame {
     if([self isStrike]) {
+        NSInteger score = 10 + [self strikeBonus];
         _historyPosition++;
-        return 10 + [self.history pinsForRoll:_historyPosition] + [self.history pinsForRoll:_historyPosition+1];
+        return score;
     }
     
     if([self isSpare]) {
-        _historyPosition += 2;
-        return 10 + [self.history pinsForRoll:_historyPosition];
+        NSInteger score = 10 + [self spareBonus];
+        _historyPosition+=2;
+        return score;
     }
     
-    NSInteger score = [self.history pinsForRoll:_historyPosition] + [self.history pinsForRoll:_historyPosition+1];
-    _historyPosition += 2;
+    NSInteger score = [self totalPinsInFrame];
+    _historyPosition+=2;
     return score;
 }
 
@@ -34,8 +36,19 @@
 }
 
 - (BOOL) isSpare {
-    NSInteger sum = [self.history pinsForRoll:_historyPosition] + [self.history pinsForRoll:_historyPosition+1];
-    return sum == 10;
+    return (![self isStrike] && [self totalPinsInFrame] == 10);
+}
+
+- (NSInteger) strikeBonus {
+    return [self.history pinsForRoll:_historyPosition+1] + [self.history pinsForRoll:_historyPosition+2];
+}
+
+- (NSInteger) spareBonus {
+    return [self.history pinsForRoll:_historyPosition+2];
+}
+
+- (NSInteger) totalPinsInFrame {
+    return [self.history pinsForRoll:_historyPosition] + [self.history pinsForRoll:_historyPosition+1];
 }
 
 @end
