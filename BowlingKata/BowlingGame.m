@@ -3,12 +3,14 @@
 @implementation BowlingGame {
     id<RollValidator> _validator;
     id<RollHistory> _history;
+    id<ScoreCalculator> _calculator;
 }
 
-- (id) initWithValidator:(id<RollValidator>)validator andHistory:(id<RollHistory>)history {
+- (id) initWithValidator:(id<RollValidator>)validator history:(id<RollHistory>)history andCalculator:(id<ScoreCalculator>)calculator {
     if(self = [super init]) {
         _validator = validator;
         _history = history;
+        _calculator = calculator;
     }
     return self;
 }
@@ -20,6 +22,9 @@
 }
 
 - (NSInteger) score {
+    if([_validator isGameComplete:_history]) {
+        return [_calculator calculateScoreOf:_history];
+    }
     return -1;
 }
 

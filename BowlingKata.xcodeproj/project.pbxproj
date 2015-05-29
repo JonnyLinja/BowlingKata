@@ -52,6 +52,7 @@
 		C32AA3C21B11560300EEE296 /* BowlingKataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BowlingKataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C32AA3C71B11560300EEE296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C334F36A1B178EA400F7E6BC /* RollHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollHistory.h; sourceTree = "<group>"; };
+		C33A363F1B17F2B8006A5206 /* ScoreCalculator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreCalculator.h; sourceTree = "<group>"; };
 		C6F3D4AD9A0F48FC094AB372 /* libPods-BowlingKata.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BowlingKata.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -122,6 +123,7 @@
 				C31F42DE1B1633CE00060270 /* BowlingGame.m */,
 				C31F42E01B164D7D00060270 /* RollValidator.h */,
 				C334F36A1B178EA400F7E6BC /* RollHistory.h */,
+				C33A363F1B17F2B8006A5206 /* ScoreCalculator.h */,
 				C32AA3B01B11560300EEE296 /* AppDelegate.h */,
 				C32AA3B11B11560300EEE296 /* AppDelegate.m */,
 				C32AA3B31B11560300EEE296 /* ViewController.h */,
