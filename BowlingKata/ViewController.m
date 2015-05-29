@@ -1,11 +1,3 @@
-//
-//  ViewController.m
-//  BowlingKata
-//
-//  Created by N A on 5/23/15.
-//  Copyright (c) 2015 N A. All rights reserved.
-//
-
 #import "ViewController.h"
 
 @interface ViewController ()
@@ -16,12 +8,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    [self rollPins:3 times:4];
+    [self rollStrike];
+    [self rollPins:2 times:8];
+    [self rollSpare];
+    [self rollStrike];
+    [self rollStrike];
+    [self rollStrike];
+    [self rollStrike];
+    
+    NSLog(@"SCORE %li", [self.game score]);
+}
+
+- (void) rollStrike {
+    [self.game roll:10 error:nil];
+}
+
+- (void) rollSpare {
+    [self.game roll:4 error:nil];
+    [self.game roll:6 error:nil];
+}
+
+- (void) rollPins:(NSInteger)pin times:(NSInteger)times {
+    for(int i=0; i<times; i++) {
+        [self.game roll:pin error:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
