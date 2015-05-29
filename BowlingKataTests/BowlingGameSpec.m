@@ -55,9 +55,17 @@ describe(@"BowlingGame", ^{
         });
     });
     
-    pending(@"when checking the score of an incomplete game", ^{
-        it(@"should throw an error", ^{
+    describe(@"when checking the score of an incomplete game", ^{
+        it(@"should return -1", ^{
+            //context
+            OCMStub([rollValidatorMock isGameComplete:rollHistoryMock]).andReturn(false);
             
+            //because
+            NSInteger score = [game score];
+            
+            //expectations
+            OCMVerify([rollValidatorMock isGameComplete:rollHistoryMock]);
+            expect(score).to.equal(-1);
         });
     });
     
