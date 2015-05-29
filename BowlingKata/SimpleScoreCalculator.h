@@ -3,6 +3,7 @@
 
 @interface SimpleScoreCalculator : NSObject <ScoreCalculator>
 
-- (NSInteger) scoreForFrame;
+//internal use
+- (NSInteger) scoreForFrame:(NSInteger)frame;
 
 @end

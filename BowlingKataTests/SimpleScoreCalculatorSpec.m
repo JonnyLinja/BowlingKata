@@ -2,21 +2,35 @@
 #import "Expecta.h"
 #import <OCMock/OCMock.h>
 
-#import "ScoreCalculator.h"
+#import "SimpleScoreCalculator.h"
 #import "RollHistory.h"
 
 SpecBegin(SimpleScoreCalculator)
 
 describe(@"when calculating score", ^{
     it(@"should return the sum of the scores for each of the 10 frames", ^{
-        
+
     });
 });
 
 
 describe(@"when calculating the score for frame with a strike", ^{
     it(@"should return 10 plus the sum of the next two rolls", ^{
+        //mocks
+        id<RollHistory> historyMock = OCMProtocolMock(@protocol(RollHistory));
+        OCMStub([historyMock pinsForRoll:0]).andReturn(10);
+        OCMStub([historyMock pinsForRoll:1]).andReturn(6);
+        OCMStub([historyMock pinsForRoll:2]).andReturn(2);
         
+        //sut
+        SimpleScoreCalculator *calculator = [SimpleScoreCalculator new];
+        calculator.history = historyMock;
+        
+        //because
+        NSInteger score = [calculator scoreForFrame:0];
+        
+        //verify
+        expect(score).to.equal(18);
     });
 });
 

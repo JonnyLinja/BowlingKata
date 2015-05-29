@@ -51,7 +51,7 @@ describe(@"BowlingGame", ^{
             
             //expectations
             OCMVerify([rollValidatorMock isValidRoll:roll error:nil]);
-            OCMVerify([rollHistoryMock recordRoll:roll]);
+            OCMVerify([rollHistoryMock recordRollWithPins:roll]);
         });
     });
     
